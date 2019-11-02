@@ -2,9 +2,16 @@
 {% block content %}
 
 <div class="container-fluid">
-    {% for result in results %}
-        <p>Question: {{ result.question }}  Answer: {{ result.answer }}</p>
-    {% endfor %}
+    <form method="POST">
+        <div class="row my-3 justify-content-center">
+        {{ form.hidden_tag() }}
+        {{ form.select.label(class="form-control-label mr-3") }}
+        {{ form.select(class="form-select") }}
+        </div>
+        <div class="row my-3 justify-content-center">
+        {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
 </div>
 
 {% endblock content %}
