@@ -2,9 +2,36 @@
 {% block content %}
 
 <div class="container-fluid">
-    {% for result in results %}
-        <p>Question: {{ result.question }}  Answer: {{ result.answer }}</p>
-    {% endfor %}
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Refine your results</h3>
+            <form method="post">
+                <div class="row justify-content-center">
+                    {{ form.hidden_tag() }}
+
+                    {{ form.min_date.label(class="form-control-label") }}
+                    {{ form.min_date(class="form-control form-control-sm") }}
+
+                    {{ form.max_date.label(class="form-control-label") }}
+                    {{ form.max_date(class="form-control form-control-sm") }}
+
+                    {{ form.value.label(class="form-control-label") }}
+                    {{ form.value(class="form-select") }}
+
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-7">
+            {% for result in results %}
+                <div class="border-primary">
+                    <h6>Question: {{ result.question }}</h6>
+                    <p>Answer: {{ result.answer }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
