@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container-fluid">
+    {% for result in results %}
+        <p>Question: {{ result.question }}  Answer: {{ result.answer }}</p>
+    {% endfor %}
+</div>
+
+{% endblock content %}
