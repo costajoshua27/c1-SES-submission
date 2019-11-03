@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container-fluid">
+<div class="jumbotron">
+    <h2 class="display-4">Trivia: a trivia app that lets you explore Jeopardy trivia questions!</h2>
+    <p class="lead">You can search for Jeopardy questions by category and further refine your results.</p>
+    <hr class="my-4">
+
     <form method="POST">
         <div class="row my-3 justify-content-center">
         {{ form.hidden_tag() }}
@@ -9,9 +13,11 @@
         {{ form.select(class="form-select") }}
         </div>
         <div class="row my-3 justify-content-center">
-        {{ form.submit(class="btn btn-outline-info") }}
+        {{ form.submit(class="btn") }}
         </div>
     </form>
+        
 </div>
+
 
 {% endblock content %}

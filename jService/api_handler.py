@@ -29,5 +29,6 @@ if __name__ == '__main__':
     jservice = jService()
     jservice.build_search_url("clues", category=13154, min_date="2010-02-14")
     results = jservice.get_results()
+    print(results)
     for result in results:
         print(result['question'], result['answer'], result['airdate'], sep=":   ")

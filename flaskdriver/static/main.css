@@ -1,0 +1,99 @@
+html, body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.adjust-for-nav {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.navbar {
+    text-align: center;
+}
+.navbar-light .navbar-brand {
+    font-size: 1.5em;
+    color: #4e54ed;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #4e54ed;
+}
+
+.jumbotron {
+    padding: 30px;
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.jumbotron .btn {
+    background-color: #4e54ed;
+    color: white;
+}
+
+.refine-section {
+    text-align: center;
+}
+
+.refine-div {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.refine-div .btn {
+    background-color: #4e54ed;
+    color: white;
+}
+
+.back-div {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-div .btn {
+    background-color: #4e54ed;
+    color: white;
+}
+
+.results-div {
+    background-color: #4e54ed;
+    border: 5px solid #7b7fe0;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px;
+}
+
+.results-div .card {
+    margin-top: 12px;
+    padding: 4px;
+}
+
+#results-title {
+    color: #ffffff;
+}
+
+.results-div .card .btn {
+    background-color: #4e54ed;
+    color: white;
+}
+
+.clue-value {
+    margin-right: 5px;
+}
+
+.clue-value p {
+    color: #7b7fe0;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #7b7fe0;
+    border-radius: 20px;
+    
+}
+
+
+.clue-airdate p {
+    color: #7b7fe0;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #7b7fe0;
+    border-radius: 20px;
+}

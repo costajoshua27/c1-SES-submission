@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-4 back-div">
+        <a href="{{ url_for('main.category', category_id=category_id) }}"><button class="btn">Back</button></a>
+    </div>
+
+    {% if results %}
+        <div class="col-md-7 results-div">
+    
+            <h3 id="results-title">{{ category }}</h3>
+    
+            {% for result in results %}
+    
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row justify-content-end">
+                            <div class="clue-value">
+                                <p>{{ result.value }}</p>
+                            </div>
+                            <div class="clue-airdate">
+                                <p>{{ result.airdate[0:10] }}</p>
+                            </div>
+                        </div>
+                        <h4 class="card-title">{{ result.question }}</h4>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#{{ result.id }}">What is...</button>
+                    </div>
+                </div>
+    
+                <div class="modal fade" id="{{ result.id }}" tabindex="-1" role="dialog" aria-labelledby="clue-modal-label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="clue-modal-label">{{ result.question }}</h5>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            {% endfor %}
+    
+        </div>
+
+    {% else %}
+
+        <div class="col-md-7 results-div">
+            <h3 id="results-title">{{ category }}</h3>
+            <div class="card">
+                <div class="card-body">
+                    <h3>No results :(</h3>
+                </div>
+            </div>
+            
+        </div>
+
+    {% endif %}
+</div>
+
+
+{% endblock content %}
