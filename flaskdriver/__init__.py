@@ -8,3 +8,4 @@ app.config.from_object(Config)
 
 from flaskdriver.main.routes import main
 app.register_blueprint(main)
+
