@@ -10,7 +10,7 @@
         <div class="row my-3 justify-content-center">
         {{ form.hidden_tag() }}
         {{ form.select.label(class="form-control-label mr-3") }}
-        {{ form.select(class="form-select") }}
+        {{ form.select(id="category-select", class="form-select") }}
         </div>
         <div class="row my-3 justify-content-center">
         {{ form.submit(class="btn") }}
@@ -18,6 +18,11 @@
     </form>
         
 </div>
+
+<script>
+    document.getElementById("category-select").firstChild.setAttribute("disabled", "true");
+    document.getElementById("category-select").firstChild.setAttribute("selected", "true");
+</script>
 
 
 {% endblock content %}

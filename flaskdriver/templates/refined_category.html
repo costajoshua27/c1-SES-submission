@@ -4,13 +4,20 @@
 
 <div class="row">
     <div class="col-md-4 back-div">
-        <a href="{{ url_for('main.category', category_id=category_id) }}"><button class="btn">Back</button></a>
+        <a href="{{ url_for('main.category', category_id=category_id) }}"><button class="btn back-button"><- Back</button></a>
     </div>
 
     {% if results %}
         <div class="col-md-7 results-div">
     
             <h3 id="results-title">{{ category }}</h3>
+            {% if refine_id == 0 %}
+                <h5 id="refine-title">Refined by Value({{ value }})</h5>
+            {% elif refine_id == 1 %}
+                <h5 id="refine-title">Refined by Date({{ min_date }} - {{ max_date }})</h5>
+            {% else %}
+                <h5 id="refine-title">Refined by Value({{ value }}) and Date({{ min_date }} - {{ max_date }})</h5>
+            {% endif %}
     
             {% for result in results %}
     

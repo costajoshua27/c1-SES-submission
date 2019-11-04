@@ -16,17 +16,13 @@ def home():
     title = "Home"
     form = SelectCategoriesForm()
     form.select.choices = [(result['id'], titlecase(result['title'])) for result in results]
+    form.select.choices = [(0, 'Select a category')] + form.select.choices
 
     if form.validate_on_submit():
         chosen_category = form.select.data
         return redirect(url_for("main.category", category_id=chosen_category))
 
     return render_template("home.html", title=title, form=form, results=results)
-
-
-@main.route("/about")
-def about():
-    return "About"
 
 
 @main.route("/category/<category_id>", methods=["GET", "POST"])
@@ -56,23 +52,26 @@ def category(category_id):
 
 @main.route("/category/<category_name>/<category_id>/<value>")
 def category_by_value(category_name, category_id, value):
+    refine_id = 0
     jservice = jService()
     jservice.build_search_url("clues", category=category_id, value=value)
     results = jservice.get_results()
-    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id)
+    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id, value=value, refine_id=refine_id)
 
 
 @main.route("/category/<category_name>/<category_id>/<min_date>/<max_date>")
 def category_by_date(category_name, category_id, min_date, max_date):
+    refine_id = 1
     jservice = jService()
     jservice.build_search_url("clues", category=category_id, min_date=min_date, max_date=max_date)
     results = jservice.get_results()
-    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id)
+    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id, refine_id=refine_id, min_date=min_date, max_date=max_date)
 
 
 @main.route("/category/<category_name>/<category_id>/<value>/<min_date>/<max_date>")
 def category_by_value_and_date(category_name, category_id, value, min_date, max_date):
+    refine_id = 2
     jservice = jService()
     jservice.build_search_url("clues", category=category_id, value=value, min_date=min_date, max_date=max_date)
     results = jservice.get_results()
-    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id)
+    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id, refine_id=refine_id, value=value, min_date=min_date, max_date=max_date)

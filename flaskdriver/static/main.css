@@ -32,6 +32,7 @@ html, body {
     width: 80vw;
     text-align: center;
     margin: 0 auto;
+    border: 5px double #7b7fe0;
 }
 
 .jumbotron .btn {
@@ -43,10 +44,19 @@ html, body {
     text-align: center;
 }
 
+.back-button {
+    background-color: #4e54ed;
+    color: white;
+    margin: 50px;
+}
+
 .refine-div {
     display: inline-block;
     text-align: center;
-    margin: 10px;
+    margin: 30px;
+    border: 5px double #7b7fe0;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 .refine-div .btn {
@@ -81,6 +91,10 @@ html, body {
     color: #ffffff;
 }
 
+#refine-title {
+    color: #ffffff;
+}
+
 .results-div .card .btn {
     background-color: #4e54ed;
     color: white;
@@ -97,7 +111,6 @@ html, body {
     border-radius: 20px;
     
 }
-
 
 .clue-airdate p {
     color: #7b7fe0;
