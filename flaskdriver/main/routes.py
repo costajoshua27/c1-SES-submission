@@ -56,7 +56,7 @@ def category_by_value(category_name, category_id, value):
     jservice = jService()
     jservice.build_search_url("clues", category=category_id, value=value)
     results = jservice.get_results()
-    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id, value=value, refine_id=refine_id)
+    return render_template("refined_category.html", title=category_name, results=results, category=category_name, category_id=category_id, value=value, refine_id=refine_id)
 
 
 @main.route("/category/<category_name>/<category_id>/<min_date>/<max_date>")
@@ -65,7 +65,7 @@ def category_by_date(category_name, category_id, min_date, max_date):
     jservice = jService()
     jservice.build_search_url("clues", category=category_id, min_date=min_date, max_date=max_date)
     results = jservice.get_results()
-    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id, refine_id=refine_id, min_date=min_date, max_date=max_date)
+    return render_template("refined_category.html", title=category_name, results=results, category=category_name, category_id=category_id, refine_id=refine_id, min_date=min_date, max_date=max_date)
 
 
 @main.route("/category/<category_name>/<category_id>/<value>/<min_date>/<max_date>")
@@ -74,4 +74,4 @@ def category_by_value_and_date(category_name, category_id, value, min_date, max_
     jservice = jService()
     jservice.build_search_url("clues", category=category_id, value=value, min_date=min_date, max_date=max_date)
     results = jservice.get_results()
-    return render_template("refined_category.html", results=results, category=category_name, category_id=category_id, refine_id=refine_id, value=value, min_date=min_date, max_date=max_date)
+    return render_template("refined_category.html", title=category_name, results=results, category=category_name, category_id=category_id, refine_id=refine_id, value=value, min_date=min_date, max_date=max_date)
