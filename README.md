@@ -2,7 +2,7 @@
 
 ## About
 
-This is my submission for the January 2020 Capital One Software Engineering Summit (SES). Final applicants were asked to complete a [coding challenge](https://www.mindsumo.com/contests/jeopardy-api), in which you would build and design a trivia web application using the [jService API](http://jservice.io) that provides 100,000+ trivia questions from the popular game show Jeopardy!
+This is my **(Winning!)** submission for the January 2020 Capital One Software Engineering Summit (SES). Final applicants were asked to complete a [coding challenge](https://www.mindsumo.com/contests/jeopardy-api), in which you would build and design a trivia web application using the [jService API](http://jservice.io) that provides 100,000+ trivia questions from the popular game show Jeopardy!
 
 You can view the project at: http://costajoshua27.pythonanywhere.com
 
